@@ -29,7 +29,7 @@ namespace DynamicExecuteAssembly
         {
             var method = typeof(TInstance).GetMethod(methodName);
             if (method == null)
-                throw new Exception($"沒有 '{methodName}' 這個組件方法");
+                throw new Exception($"{typeof(TInstance)} 沒有 {methodName} 這個組件方法");
             return method;
         }
 
@@ -45,7 +45,7 @@ namespace DynamicExecuteAssembly
             var executeResult = method.Invoke(assemblyInstance, new object[0]) as IExecuteResult<TResult>;
             if (executeResult == null)
                 throw new Exception(
-                    $"組件方法 {method.Name} 未依照設計規範回傳繼承自 IExecuteResult<T> 介面的物件，可將該組件方法的回傳型別改為 DefaultExecuteResult");
+                    $"依照設計規範 {typeof(TInstance)} 的 {method.Name} 組件方法必須回傳繼承自 IExecuteResult<T> 介面的物件，可將該組件方法的回傳型別改為 DefaultExecuteResult");
             return executeResult;
         }
 
@@ -62,19 +62,19 @@ namespace DynamicExecuteAssembly
             var parameters = method.GetParameters();
             var parameterType = parameters[0].ParameterType;
             if (parameters.Count() > 1)
-                throw new Exception($"組件方法 {method.Name as object} 未依照設計規範，所執行的組件方法只能傳入一個參數");
+                throw new Exception($"依照設計規範 {typeof(TInstance)} 的 {method.Name} 組件方法只能傳入一個參數");
             try
             {
                 var parameter = JsonConvert.DeserializeObject(parameterByJson, parameterType);
-                var executeResult1 = method.Invoke(assemblyInstance, new[] { parameter }) as IExecuteResult<TResult>;
-                if (executeResult1 == null)
+                var executeResult = method.Invoke(assemblyInstance, new[] { parameter }) as IExecuteResult<TResult>;
+                if (executeResult == null)
                     throw new Exception(
-                        $"組件方法 {method.Name} 未依照設計規範回傳繼承自 IExecuteResult<T> 介面的物件，可將該組件方法的回傳型別改為 DefaultExecuteResult");
-                return executeResult1;
+                        $"依照設計規範 {typeof(TInstance)} 的 {method.Name} 組件方法必須回傳繼承自 IExecuteResult<T> 介面的物件，可將該組件方法的回傳型別改為 DefaultExecuteResult");
+                return executeResult;
             }
             catch (Exception ex)
             {
-                throw new Exception($"JSON 參數反序列化錯誤，請檢查組件方法 {method.Name} 所需參數型別應為: {parameterType}", ex);
+                throw new Exception($"JSON 參數反序列化錯誤，{typeof(TInstance)} 的 {method.Name} 組件方法所需參數型別應為: {parameterType}", ex);
             }
         }
     }

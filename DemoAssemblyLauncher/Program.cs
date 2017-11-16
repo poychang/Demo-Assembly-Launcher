@@ -10,6 +10,7 @@ namespace DemoAssemblyLauncher
         private static void Main(string[] args)
         {
             var assemblyLauncher = new AssemblyLauncher();
+
             var result1 = assemblyLauncher.Execute<BizLagicObjcet, object>(new BizLagicObjcet(), "GetString");
             Console.WriteLine(JsonConvert.SerializeObject(result1));
 
