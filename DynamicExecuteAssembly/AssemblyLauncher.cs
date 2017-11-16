@@ -63,19 +63,22 @@ namespace DynamicExecuteAssembly
             var parameterType = parameters[0].ParameterType;
             if (parameters.Count() > 1)
                 throw new Exception($"依照設計規範 {typeof(TInstance)} 的 {method.Name} 組件方法只能傳入一個參數");
+
+            object parameter;
             try
             {
-                var parameter = JsonConvert.DeserializeObject(parameterByJson, parameterType);
-                var executeResult = method.Invoke(assemblyInstance, new[] { parameter }) as IExecuteResult<TResult>;
-                if (executeResult == null)
-                    throw new Exception(
-                        $"依照設計規範 {typeof(TInstance)} 的 {method.Name} 組件方法必須回傳繼承自 IExecuteResult<T> 介面的物件，可將該組件方法的回傳型別改為 DefaultExecuteResult");
-                return executeResult;
+                parameter = JsonConvert.DeserializeObject(parameterByJson, parameterType);
             }
             catch (Exception ex)
             {
                 throw new Exception($"JSON 參數反序列化錯誤，{typeof(TInstance)} 的 {method.Name} 組件方法所需參數型別應為: {parameterType}", ex);
             }
+
+            var executeResult = method.Invoke(assemblyInstance, new[] { parameter }) as IExecuteResult<TResult>;
+            if (executeResult == null)
+                throw new Exception(
+                    $"依照設計規範 {typeof(TInstance)} 的 {method.Name} 組件方法必須回傳繼承自 IExecuteResult<T> 介面的物件，可將該組件方法的回傳型別改為 DefaultExecuteResult");
+            return executeResult;
         }
     }
 }
