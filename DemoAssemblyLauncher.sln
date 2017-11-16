@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DynamicExecuteAssembly", "D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoAssemblyLauncher", "DemoAssemblyLauncher\DemoAssemblyLauncher.csproj", "{3F2A0174-71FE-4BB0-8B86-E45DF1D2F70E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoBizLogic", "DemoBizLogic\DemoBizLogic.csproj", "{D5FCEE21-E01E-403C-B6A9-28650763653B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo", "Demo", "{B39ECB7E-F293-4F69-9742-9E68BF3CAEA4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,9 +25,16 @@ Global
 		{3F2A0174-71FE-4BB0-8B86-E45DF1D2F70E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F2A0174-71FE-4BB0-8B86-E45DF1D2F70E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F2A0174-71FE-4BB0-8B86-E45DF1D2F70E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5FCEE21-E01E-403C-B6A9-28650763653B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5FCEE21-E01E-403C-B6A9-28650763653B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5FCEE21-E01E-403C-B6A9-28650763653B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5FCEE21-E01E-403C-B6A9-28650763653B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D5FCEE21-E01E-403C-B6A9-28650763653B} = {B39ECB7E-F293-4F69-9742-9E68BF3CAEA4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {15EA7DCE-51AD-41AD-9EAF-CB0849017A3E}
