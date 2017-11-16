@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DynamicExecuteAssembly", "D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoAssemblyLauncher", "DemoAssemblyLauncher\DemoAssemblyLauncher.csproj", "{3F2A0174-71FE-4BB0-8B86-E45DF1D2F70E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject", "UnitTestProject\UnitTestProject.csproj", "{1868C577-BF9F-4067-A8D3-58244A41C3BE}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoAssemblyLauncherWithWebAPI", "DemoAssemblyLauncherWithWebAPI\DemoAssemblyLauncherWithWebAPI.csproj", "{C7F446BC-2A6C-4576-A6EC-FB57EA619633}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoBizLogic", "DemoBizLogic\DemoBizLogic.csproj", "{D5FCEE21-E01E-403C-B6A9-28650763653B}"
@@ -27,6 +29,10 @@ Global
 		{3F2A0174-71FE-4BB0-8B86-E45DF1D2F70E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F2A0174-71FE-4BB0-8B86-E45DF1D2F70E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F2A0174-71FE-4BB0-8B86-E45DF1D2F70E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1868C577-BF9F-4067-A8D3-58244A41C3BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1868C577-BF9F-4067-A8D3-58244A41C3BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1868C577-BF9F-4067-A8D3-58244A41C3BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1868C577-BF9F-4067-A8D3-58244A41C3BE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C7F446BC-2A6C-4576-A6EC-FB57EA619633}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C7F446BC-2A6C-4576-A6EC-FB57EA619633}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7F446BC-2A6C-4576-A6EC-FB57EA619633}.Release|Any CPU.ActiveCfg = Release|Any CPU
