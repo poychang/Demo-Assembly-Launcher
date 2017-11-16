@@ -14,7 +14,7 @@ namespace DynamicExecuteAssembly
         /// <param name="methodName">組件方法的名稱</param>
         /// <param name="parameterByJson">組件方法的參數，請使用 JSON 格式</param>
         /// <returns></returns>
-        public IExecuteResult<TResult> Execute<TInstance, TResult>(TInstance assemblyInstance, string methodName, string parameterByJson)
+        public IExecuteResult<TResult> Execute<TInstance, TResult>(TInstance assemblyInstance, string methodName, string parameterByJson = "")
         {
             return GetMethod<TInstance>(methodName).GetParameters().Any() ?
                 ExecuteMethodWithParamter<TInstance, TResult>(assemblyInstance, methodName, parameterByJson) :

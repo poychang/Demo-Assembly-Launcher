@@ -29,7 +29,7 @@ namespace DemoAssemblyLauncherWithWebAPI.Controllers
         [HttpGet("{method}")]
         public IActionResult Get(string method)
         {
-            var result = AssemblyLauncher.Execute<BizLagicObjcet, object>(new BizLagicObjcet(), method, "");
+            var result = AssemblyLauncher.Execute<BizLagicObjcet, object>(new BizLagicObjcet(), method);
             return new JsonResult(result);
         }
 
