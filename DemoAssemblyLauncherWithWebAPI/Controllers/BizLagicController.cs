@@ -2,6 +2,7 @@
 using DynamicExecuteAssembly;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System.Linq;
 
 namespace DemoAssemblyLauncherWithWebAPI.Controllers
 {
@@ -9,6 +10,17 @@ namespace DemoAssemblyLauncherWithWebAPI.Controllers
     public class BizLagicController : Controller
     {
         public AssemblyLauncher AssemblyLauncher = new AssemblyLauncher();
+
+        // GET api/BizLagic/$MethodList
+        /// <summary>取得 BizLagic 組件的方法清單</summary>
+        /// <remarks>參考 OData 的 prefix 方式，使用 $ 做為識別符</remarks>
+        /// <returns></returns>
+        [HttpGet("$MethodList")]
+        public IActionResult GetMethodList()
+        {
+            var result = typeof(IBizLagicObjcet).GetMethods().Select(p => p.Name);
+            return new JsonResult(result);
+        }
 
         // GET api/BizLagic/GetString
         /// <summary>執行 BizLagic 組件的 GetString 方法</summary>
