@@ -8,8 +8,8 @@ namespace DynamicExecuteAssembly
     public class AssemblyLauncher
     {
         /// <summary>執行指定組件方法</summary>
-        /// <typeparam name="TInstance">組件類別</typeparam>
-        /// <typeparam name="TResult">回傳類別</typeparam>
+        /// <typeparam name="TInstance">組件型別</typeparam>
+        /// <typeparam name="TResult">回傳型別</typeparam>
         /// <param name="assemblyInstance">組件執行個體</param>
         /// <param name="methodName">組件方法的名稱</param>
         /// <param name="parameterByJson">組件方法的參數，請使用 JSON 格式</param>
@@ -22,20 +22,20 @@ namespace DynamicExecuteAssembly
         }
 
         /// <summary>取得組件方法</summary>
-        /// <typeparam name="T">組件類別</typeparam>
+        /// <typeparam name="TInstance">組件型別</typeparam>
         /// <param name="methodName">組件方法的名稱</param>
         /// <returns></returns>
-        private static MethodBase GetMethod<T>(string methodName)
+        private static MethodBase GetMethod<TInstance>(string methodName)
         {
-            var method = typeof(T).GetMethod(methodName);
+            var method = typeof(TInstance).GetMethod(methodName);
             if (method == null)
                 throw new Exception($"沒有 '{methodName}' 這個組件方法");
             return method;
         }
 
         /// <summary>組件方法無參數的執行方法</summary>
-        /// <typeparam name="TInstance">組件類別</typeparam>
-        /// <typeparam name="TResult">回傳類別</typeparam>
+        /// <typeparam name="TInstance">組件型別</typeparam>
+        /// <typeparam name="TResult">回傳型別</typeparam>
         /// <param name="assemblyInstance">組件執行個體</param>
         /// <param name="methodName">組件方法的名稱</param>
         /// <returns></returns>
@@ -50,8 +50,8 @@ namespace DynamicExecuteAssembly
         }
 
         /// <summary>組件方法有參數的執行方法</summary>
-        /// <typeparam name="TInstance">組件類別</typeparam>
-        /// <typeparam name="TResult">回傳類別</typeparam>
+        /// <typeparam name="TInstance">組件型別</typeparam>
+        /// <typeparam name="TResult">回傳型別</typeparam>
         /// <param name="assemblyInstance">組件執行個體</param>
         /// <param name="methodName">組件方法的名稱</param>
         /// <param name="parameterByJson">組件方法的參數，請使用 JSON 格式</param>
