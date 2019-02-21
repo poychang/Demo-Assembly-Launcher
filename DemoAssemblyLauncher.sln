@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DynamicExecuteAssembly", "DynamicExecuteAssembly\DynamicExecuteAssembly.csproj", "{3F011202-E526-496A-B37D-070B355ADF73}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoAssemblyLauncher", "DemoAssemblyLauncher\DemoAssemblyLauncher.csproj", "{3F2A0174-71FE-4BB0-8B86-E45DF1D2F70E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject", "UnitTestProject\UnitTestProject.csproj", "{1868C577-BF9F-4067-A8D3-58244A41C3BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTestProject", "UnitTestProject\UnitTestProject.csproj", "{1868C577-BF9F-4067-A8D3-58244A41C3BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoAssemblyLauncherWithWebAPI", "DemoAssemblyLauncherWithWebAPI\DemoAssemblyLauncherWithWebAPI.csproj", "{C7F446BC-2A6C-4576-A6EC-FB57EA619633}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoAssemblyLauncherWithWebAPI", "DemoAssemblyLauncherWithWebAPI\DemoAssemblyLauncherWithWebAPI.csproj", "{C7F446BC-2A6C-4576-A6EC-FB57EA619633}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoBizLogic", "DemoBizLogic\DemoBizLogic.csproj", "{D5FCEE21-E01E-403C-B6A9-28650763653B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoBizLogic", "DemoBizLogic\DemoBizLogic.csproj", "{D5FCEE21-E01E-403C-B6A9-28650763653B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo", "Demo", "{B39ECB7E-F293-4F69-9742-9E68BF3CAEA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicExecuteAssembly", "DynamicExecuteAssembly\DynamicExecuteAssembly.csproj", "{03C39FDD-052F-4DB0-BF33-7982CB5695D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3F011202-E526-496A-B37D-070B355ADF73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3F011202-E526-496A-B37D-070B355ADF73}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3F011202-E526-496A-B37D-070B355ADF73}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3F011202-E526-496A-B37D-070B355ADF73}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3F2A0174-71FE-4BB0-8B86-E45DF1D2F70E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3F2A0174-71FE-4BB0-8B86-E45DF1D2F70E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F2A0174-71FE-4BB0-8B86-E45DF1D2F70E}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -41,6 +37,10 @@ Global
 		{D5FCEE21-E01E-403C-B6A9-28650763653B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5FCEE21-E01E-403C-B6A9-28650763653B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5FCEE21-E01E-403C-B6A9-28650763653B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03C39FDD-052F-4DB0-BF33-7982CB5695D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03C39FDD-052F-4DB0-BF33-7982CB5695D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03C39FDD-052F-4DB0-BF33-7982CB5695D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03C39FDD-052F-4DB0-BF33-7982CB5695D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
