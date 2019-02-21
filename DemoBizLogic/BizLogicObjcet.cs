@@ -2,7 +2,7 @@
 
 namespace DemoBizLogic
 {
-    public class BizLagicObjcet
+    public class BizLogicObjcet
     {
         public IExecuteResult<object> GetString()
         {

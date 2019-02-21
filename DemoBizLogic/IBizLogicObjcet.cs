@@ -2,7 +2,7 @@
 
 namespace DemoBizLogic
 {
-    public interface IBizLagicObjcet
+    public interface IBizLogicObjcet
     {
         IExecuteResult<object> GetString();
 

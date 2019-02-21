@@ -7,7 +7,7 @@ using System.Linq;
 namespace DemoAssemblyLauncherWithWebAPI.Controllers
 {
     [Route("api/[controller]")]
-    public class BizLagicController : Controller
+    public class BizLogicController : Controller
     {
         public AssemblyLauncher AssemblyLauncher = new AssemblyLauncher();
 
@@ -18,7 +18,7 @@ namespace DemoAssemblyLauncherWithWebAPI.Controllers
         [HttpGet("$MethodList")]
         public IActionResult GetMethodList()
         {
-            var result = typeof(IBizLagicObjcet).GetMethods().Select(p => p.Name);
+            var result = typeof(IBizLogicObjcet).GetMethods().Select(p => p.Name);
             return new JsonResult(result);
         }
 
@@ -29,7 +29,7 @@ namespace DemoAssemblyLauncherWithWebAPI.Controllers
         [HttpGet("{method}")]
         public IActionResult Get(string method)
         {
-            var result = AssemblyLauncher.Execute<BizLagicObjcet, object>(new BizLagicObjcet(), method);
+            var result = AssemblyLauncher.Execute<BizLogicObjcet, object>(new BizLogicObjcet(), method);
             return new JsonResult(result);
         }
 
@@ -42,7 +42,7 @@ namespace DemoAssemblyLauncherWithWebAPI.Controllers
         [HttpPost("{method}")]
         public IActionResult Post(string method, [FromBody]BizLagicModel parameter)
         {
-            var result = AssemblyLauncher.Execute<BizLagicObjcet, object>(new BizLagicObjcet(), method, JsonConvert.SerializeObject(parameter));
+            var result = AssemblyLauncher.Execute<BizLogicObjcet, object>(new BizLogicObjcet(), method, JsonConvert.SerializeObject(parameter));
             return new JsonResult(result);
         }
     }

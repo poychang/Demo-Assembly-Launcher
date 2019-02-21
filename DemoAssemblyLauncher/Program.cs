@@ -11,11 +11,11 @@ namespace DemoAssemblyLauncher
         {
             var assemblyLauncher = new AssemblyLauncher();
 
-            var result1 = assemblyLauncher.Execute<BizLagicObjcet, object>(new BizLagicObjcet(), "GetString");
+            var result1 = assemblyLauncher.Execute<BizLogicObjcet, object>(new BizLogicObjcet(), "GetString");
             Console.WriteLine(JsonConvert.SerializeObject(result1));
 
-            var result2 = assemblyLauncher.Execute<BizLagicObjcet, object>(
-                new BizLagicObjcet(),
+            var result2 = assemblyLauncher.Execute<BizLogicObjcet, object>(
+                new BizLogicObjcet(),
                 "GetStringWithParamter",
                 JsonConvert.SerializeObject(new { Name = "Hello World" })
                 );
@@ -23,8 +23,8 @@ namespace DemoAssemblyLauncher
 
             try
             {
-                var result3 = assemblyLauncher.Execute<BizLagicObjcet, object>(
-                    new BizLagicObjcet(),
+                var result3 = assemblyLauncher.Execute<BizLogicObjcet, object>(
+                    new BizLogicObjcet(),
                     "GetStringWith2Paramter",
                     string.Concat(
                         JsonConvert.SerializeObject(new { Name = "Hello World1" }),
