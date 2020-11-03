@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Reflection;
-using Newtonsoft.Json;
+using System.Text.Json;
 
 namespace DynamicExecuteAssembly
 {
@@ -67,7 +67,7 @@ namespace DynamicExecuteAssembly
             object parameter;
             try
             {
-                parameter = JsonConvert.DeserializeObject(parameterByJson, parameterType);
+                parameter = JsonSerializer.Deserialize(parameterByJson, parameterType);
             }
             catch (Exception ex)
             {

@@ -1,7 +1,7 @@
-﻿using System;
-using DemoBizLogic;
+﻿using DemoBizLogic;
 using DynamicExecuteAssembly;
-using Newtonsoft.Json;
+using System;
+using System.Text.Json;
 
 namespace DemoAssemblyLauncher
 {
@@ -12,14 +12,14 @@ namespace DemoAssemblyLauncher
             var assemblyLauncher = new AssemblyLauncher();
 
             var result1 = assemblyLauncher.Execute<BizLogicObjcet, object>(new BizLogicObjcet(), "GetString");
-            Console.WriteLine(JsonConvert.SerializeObject(result1));
+            Console.WriteLine(JsonSerializer.Serialize(result1));
 
             var result2 = assemblyLauncher.Execute<BizLogicObjcet, object>(
                 new BizLogicObjcet(),
                 "GetStringWithParamter",
-                JsonConvert.SerializeObject(new { Name = "Hello World" })
+                JsonSerializer.Serialize(new { Name = "Hello World" })
                 );
-            Console.WriteLine(JsonConvert.SerializeObject(result2));
+            Console.WriteLine(JsonSerializer.Serialize(result2));
 
             try
             {
@@ -27,10 +27,10 @@ namespace DemoAssemblyLauncher
                     new BizLogicObjcet(),
                     "GetStringWith2Paramter",
                     string.Concat(
-                        JsonConvert.SerializeObject(new { Name = "Hello World1" }),
-                        JsonConvert.SerializeObject(new { Name = "Hello World2" }))
+                        JsonSerializer.Serialize(new { Name = "Hello World1" }),
+                        JsonSerializer.Serialize(new { Name = "Hello World2" }))
                         );
-                Console.WriteLine(JsonConvert.SerializeObject(result3));
+                Console.WriteLine(JsonSerializer.Serialize(result3));
             }
             catch (Exception e)
             {
